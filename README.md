@@ -2,12 +2,12 @@
 
 Based on Gentelella admin template.
 
-**[Template Demo](https://colorlib.com/polygon/gentelella/index.html)**
+**[Template Demo](https://colorlib.com/polygon/gentelella/index.html)** https://colorlib.com/polygon/gentelella/index.html
 
 ## Documentation
 
-**[Documentation](https://puikinsh.github.io/gentelella/)**
+**[Documentation](https://puikinsh.github.io/gentelella/)** https://puikinsh.github.io/gentelella/
 
 ## GitHub repository
 
-**[GitHub](https://github.com/ColorlibHQ/gentelella)**
+**[GitHub](https://github.com/ColorlibHQ/gentelella)** https://github.com/ColorlibHQ/gentelella
