@@ -6,8 +6,8 @@ header("Content-Type: application/json; charset=UTF-8");
 /*****************************/
 
 // include database and object files
-include_once '../database/config.php';
-include_once '../database/client.php';
+include_once '../config_bd.php';
+include_once './dao-client.php';
 
 // instantiate database and connection
 $database = new Database();
@@ -37,7 +37,7 @@ if($num>0){
         $client = array(
             "id" => $id,
             "name" => $name,
-            "lastName" => html_entity_decode($last_name),
+            "lastName" => html_entity_decode($lastName),
 			"birthday" => $birthday
         );
  

@@ -21,7 +21,7 @@ class Client{
  
 		//select all data
 		$query = "SELECT
-					id, name, last_name, birthday
+					id, name, last_name as lastName, birthday
 				FROM
 					" . $this->table_name . "
 				ORDER BY
