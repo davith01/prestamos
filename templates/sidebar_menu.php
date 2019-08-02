@@ -23,9 +23,9 @@
 		  <li><a href="page_no_found.php">Balance</a></li>
 		</ul>
 	  </li>
-	  <li><a><i class="fa fa-table"></i> Usuarios <span class="fa fa-user"></span></a>
+	  <li><a><i class="fa fa-user"></i> Administrar Clientes <span class="fa fa-chevron-down"></span></a>
 		<ul class="nav child_menu">
-		  <li><a href="page_no_found.php">Crear usuario</a></li>
+		  <li><a href="page_no_found.php">Crear cliente</a></li>
 		</ul>
 	  </li>
 	  <li><a><i class="fa fa-clone"></i>Informes y reportes <span class="fa fa-chevron-down"></span></a>
