@@ -1,3 +1,10 @@
+<script> 
+	var pbUserCookie = localStorage.getItem("pbUserCookie");
+	if(!pbUserCookie) {
+		window.location.href = "./login.php";
+	}
+</script>
+	
 <!-- top navigation -->
 <div class="top_nav">
   <div class="nav_menu">
@@ -21,7 +28,7 @@
 			  </a>
 			</li>
 			<li><a href="javascript:;">Help</a></li>
-			<li><a href="login.php"><i class="fa fa-sign-out pull-right"></i> Salir</a></li>
+			<li><a id="logout-button" href=""><i class="fa fa-sign-out pull-right"></i> Salir</a></li>
 		  </ul>
 		</li>
 

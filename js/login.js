@@ -1,10 +1,3 @@
-/**
- * HTTP login function 
- * Jquery
- */
-function sendLogin() {
-	$.post( "test.php", { name: "John", time: "2pm" } );	
-}
 
  // Attach a submit handler to the form
 $( "#loginForm" ).submit(function( event ) {
@@ -23,7 +16,7 @@ $( "#loginForm" ).submit(function( event ) {
  
   // redirect to the login
   posting.done(function( data ) {
-	console.log(data);
+	localStorage.setItem("pbUserCookie",data);
     window.location.href = "./index.php";
   });
   

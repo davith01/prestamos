@@ -18,24 +18,32 @@ $user = new User($db);
 $username = '';
 $password = '';
 
-if(isset($_POST["nombre"])) {
-	$username = $_POST["nombre"];
+if(isset($_POST["username"])) {
+	$username = $_POST["username"];
 }
 if(isset($_POST["password"])) {
 	$password = $_POST["password"];
 }
 // query login 
-$result = $user->login($username,$password);
+$stmt = $user->login($username,$password);
  
 // check if more than 0 record found
-if($result){
- 
+if($stmt->rowCount() > 0){
+	
+	$row = $stmt->fetch(PDO::FETCH_ASSOC);
+	$data = array(
+		"id" => $row['id'],
+		"username" => $row['username'],
+		"name" => $row['name']
+	);
+
     // set response code - 200 OK
     http_response_code(200);
     
 	echo json_encode( 
 	  array(
 		"message" => "login success", 
+		"data" =>  $data,
 		"status" => "success"
 		)
 	);

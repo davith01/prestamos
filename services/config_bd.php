@@ -3,7 +3,7 @@ class Database {
  
     // specify your own database credentials
     private $host = "localhost";
-    private $db_name = "rappiappbd";
+    private $db_name = "prestamos_bd";
     private $username = "root";
     private $password = "";
     public $conn;

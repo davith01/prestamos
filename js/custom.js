@@ -1,4 +1,13 @@
 /**
+ * Delete session and send to the login page
+**/
+$('#logout-button').click(function(){
+	localStorage.removeItem("pbUserCookie");
+    window.location.href = "./login.php";		
+});
+
+
+/**
  * Resize function without multiple trigger
  * 
  * Usage:

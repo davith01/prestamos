@@ -16,7 +16,7 @@ $db = $database->getConnection();
 // initialize object
 $client = new Client($db);
  
-// query cateogies
+// query read
 $stmt = $client->read();
 $num = $stmt->rowCount();
  
@@ -37,8 +37,8 @@ if($num>0){
         $client = array(
             "id" => $id,
             "name" => $name,
-            "lastName" => html_entity_decode($lastName),
-			"birthday" => $birthday
+            "last_name" => $last_name,
+			"age" => $age
         );
  
         array_push($list, $client);
@@ -48,7 +48,7 @@ if($num>0){
     http_response_code(200);
  
     // show categories data in json format
-    echo json_encode($list);
+    echo json_encode(array("data" => $list));
 }
  
 else{
@@ -56,7 +56,7 @@ else{
     // set response code - 404 Not found
     http_response_code(404);
  
-    // tell the user no categories found
+    // no data found
     echo json_encode(
         array("message" => "No client found.")
     );
