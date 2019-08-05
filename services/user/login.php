@@ -30,23 +30,26 @@ $stmt = $user->login($username,$password);
 // check if more than 0 record found
 if($stmt->rowCount() > 0){
 	
-	$row = $stmt->fetch(PDO::FETCH_ASSOC);
-	$data = array(
-		"id" => $row['id'],
-		"username" => $row['username'],
-		"name" => $row['name']
-	);
+	if($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+		extract($row);
+		$data = array(
+			"id" => $id,
+			"username" => $username,
+			"name" => $name
+		);
 
-    // set response code - 200 OK
-    http_response_code(200);
-    
-	echo json_encode( 
-	  array(
-		"message" => "login success", 
-		"data" =>  $data,
-		"status" => "success"
-		)
-	);
+		// set response code - 200 OK
+		http_response_code(200);
+		
+		echo json_encode( 
+		  array(
+			"message" => "login success", 
+			"data" =>  $data,
+			"status" => "success"
+			)
+		);
+		
+	});
 }
  
 else{
