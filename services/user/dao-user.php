@@ -21,9 +21,8 @@ class User{
 		//count the rows
 		$query = "SELECT id, user_name, name
 				FROM " . $this->table_name ." 
-				WHERE user_name = '".$username."' 
-				  AND password = '".$password."'";
-	
+				WHERE user_name = '".$username."'
+				  AND password = SHA1('".$password."')";
 		$stmt = $this->conn->prepare( $query );
 		$stmt->execute();
 		
