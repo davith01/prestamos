@@ -29,31 +29,31 @@
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             
-			<!-- navbar nav_title -->
-			<?php require 'templates/navbar nav_title.php'?>
-			<!-- navbar nav_title -->
+			<!-- navbar-nav-title -->
+			<?php require 'templates/navbar-nav-title.php'?>
+			<!-- navbar-nav-title -->
 
             <div class="clearfix"></div>
 
             <!-- menu profile quick info -->
-			<?php require 'templates/menu_profile_quick_info.php'?>
+			<?php require 'templates/menu-profile-quick-info.php'?>
 			<!-- menu profile quick info -->
 
             <br />
 
             <!-- sidebar menu -->
-			<?php require './templates/sidebar_menu.php'?>
+			<?php require './templates/sidebar-menu.php'?>
 			<!-- sidebar menu -->
 			
 			
             <!-- /menu footer buttons -->
-			<?php require 'templates/menu_footer_buttons.php'?>
+			<?php require 'templates/menu-footer-buttons.php'?>
 			<!-- /menu footer buttons -->
           </div>
         </div>
 
         <!-- top navigation -->
-        <?php require 'templates/top_navigation.php'?>
+        <?php require 'templates/top-navigation.php'?>
 		<!-- /top navigation -->
 
         <!-- page content -->
@@ -68,9 +68,9 @@
             <div class="clearfix"></div>
 			
 			<ul class="breadcrumb" style="margin-bottom: 10px;">
-			  <li><a href="client_list.php" style="font-size: 22px; margin-left: -15px;" class="btn-primary btn-xs btn-default"><i class="fa fa-arrow-left"></i></a></li>
+			  <li><a href="client-list.php" class="btn-primary btn-xs btn-default btn-back-nav"><i class="fa fa-arrow-left"></i></a></li>
 			  <li><a href="index.php">Inicio</a> </li>
-			  <li><a href="client_list.php">Lista de Clientes</a></li>
+			  <li><a href="client-list.php">Lista de Clientes</a></li>
 			  <li class="active">Consulta cliente</li>
 			</ul>
 
@@ -89,9 +89,9 @@
 							  <h2>{{client.name}} {{client.last_name}}</h2>
 							  <p><strong>About: </strong> Web Designer / UX / Graphic Artist / Coffee Lover </p>
 							  <ul class="list-unstyled">
-								<li><i class="fa fa-building"></i> Abono a Capital: {{client.capital}}</li>
-								<li><i class="fa fa-phone"></i> Abono a Intereses: {{client.interest}}</li>
-								<li><i class="fa fa-phone"></i> Meses atrasados: {{client.overdue_months}}</li>
+								<li><i class="fa fa-building"></i> Abono a Capital: {{client.capital_format}}</li>
+								<li><i class="fa fa-phone"></i> Abono a Intereses: {{client.interest_format}}</li>
+								<li><i class="fa fa-phone"></i> Meses atrasados: {{client.overdue_months_format}}</li>
 							  </ul>
 							</div>
 							<div class="right col-xs-5 text-center">
@@ -110,7 +110,7 @@
 							  </p>
 							</div>
 							<div class="col-xs-12 col-sm-6 emphasis">
-							  <button type="button" class="btn btn-primary btn-xs">
+							  <button type="button" class="btn btn-primary btn-xs" onclick="getEditClient('{{client.id}}')">
 								</i> <i class="fa fa-edit"></i> Editar Perfil</button>
 							</div>
 						  </div>
@@ -213,7 +213,7 @@
         <!-- /page content -->
 
         <!-- footer content -->
-		<?php require 'templates/footer_content.php'?>
+		<?php require 'templates/footer-content.php'?>
 		<!-- footer content -->
         
       </div>
@@ -253,7 +253,7 @@
     <script src="./js/custom.js"></script>
 	
 	<!-- Client List Scripts -->
-    <script src="./js/client_panel_view.js"></script>
+    <script src="./js/client-panel-view.js"></script>
 	
   </body>
 </html>

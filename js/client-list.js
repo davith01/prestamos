@@ -1,6 +1,9 @@
-// onSelectRow
+// click on row button
 function getViewClient(id){
-	window.location.href = './client_panel_view.php?id='+id;	
+	window.location.href = './client-panel-view.php?id='+id;	
+}
+function getEditClient(id){
+	window.location.href = './client-panel-edit.php?id='+id;	
 }
 
  // Retrive the client list and load datatable
@@ -24,8 +27,8 @@ $(document).ready(function(){
                 return data;
             }
         },
-		'select': true,
-		'keys': true,
+		//'select': true,
+		//'keys': true,
 		'columns': [
 			{
 				'data': 'name'
@@ -44,7 +47,7 @@ $(document).ready(function(){
 				'data': null,
 				'render': function(data) {
 					var view_button = '<button type="button" class="btn btn-success btn-xs btn-view" onclick="getViewClient('+data.id+')" id="'+data.id+'"> <i class="fa fa-user"></i> Ver </button>';
-					var edit_button = '<button type="button" class="btn btn-primary btn-xs btn-edit" id="'+data.id+'"> <i class="fa fa-edit"></i> Editar </button>';
+					var edit_button = '<button type="button" class="btn btn-primary btn-xs btn-edit" onclick="getEditClient('+data.id+')" id="'+data.id+'"> <i class="fa fa-edit"></i> Editar </button>';
 					return view_button + edit_button;
 				},
 				 'width': '15%'

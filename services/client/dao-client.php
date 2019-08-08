@@ -30,7 +30,7 @@ class Client{
 		//select one
 		$query = "SELECT id, name, last_name, floor(datediff(curdate(),birth_date) / 365.25) as age,
 					genere, IFNULL(image,IFNULL(IF(genere=2,'resources/images/female.jpg','resources/images/male.jpg'),'resources/images/foto_default.jpg')) as image,
-					123.130 balance, 123123.0 capital, 123123.0 interest, 123123.0 overdue_months,
+					0 balance, 15000 capital, 3231 interest, 3 overdue_months,
 					IF(genere=2,'Oficina','Cliente') as type
 				    FROM " . $this->table_name . "
 				   WHERE status = 1	

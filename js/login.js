@@ -8,11 +8,12 @@ $( "#loginForm" ).submit(function( event ) {
   // Get some values from elements on the page:
   var $form = $( this ),
     username = $form.find( "input[name='username']" ).val(),
-	password = $form.find( "input[name='password']" ).val(),
+	passwd = $form.find( "input[name='password']" ).val(),
+	passwd = SHA1(passwd),
     url = $form.attr( "action" );
  
   // Send the data using post
-  var posting = $.post( url, { username: username, password: password } );
+  var posting = $.post( url, { 'username': username, 'password': passwd } );
  
   // redirect to the login
   posting.done(function( data ) {
@@ -28,5 +29,7 @@ $( "#loginForm" ).submit(function( event ) {
 	else {
 		alert( "error!!" );
 	}
-  })
+  });
+  
+  
 });

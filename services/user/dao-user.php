@@ -19,9 +19,9 @@ class User{
 	public function login($username,$password){
  
 		//count the rows
-		$query = "SELECT id, username, name
+		$query = "SELECT id, user_name, name
 				FROM " . $this->table_name ." 
-				WHERE username = '".$username."' 
+				WHERE user_name = '".$username."' 
 				  AND password = '".$password."'";
 	
 		$stmt = $this->conn->prepare( $query );

@@ -33,7 +33,7 @@ if($stmt->rowCount() > 0){
 	$row = $stmt->fetch(PDO::FETCH_ASSOC);
 	$data = array(
 		"id" => $row['id'],
-		"username" => $row['username'],
+		"user_name" => $row['user_name'],
 		"name" => $row['name']
 	);
 

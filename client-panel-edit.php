@@ -18,13 +18,8 @@
     <link href="./vendors/nprogress/nprogress.css" rel="stylesheet">
     <!-- iCheck -->
     <link href="./vendors/iCheck/skins/flat/green.css" rel="stylesheet">
-    <!-- Datatables -->
-    <link href="./vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
-    <link href="./vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
-    <link href="./vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
-    <link href="./vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
-    <link href="./vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
-
+    <!-- Switchery -->
+    <link href="./vendors/switchery/dist/switchery.min.css" rel="stylesheet">
     <!-- Custom Theme Style -->
     <link href="./css/custom.css" rel="stylesheet">
   </head>
@@ -35,116 +30,124 @@
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             
-			<!-- navbar nav_title -->
-			<?php require 'templates/navbar nav_title.php'?>
-			<!-- navbar nav_title -->
+			<!-- navbar-nav-title -->
+			<?php require 'templates/navbar-nav-title.php'?>
+			<!-- navbar-nav-title -->
 
             <div class="clearfix"></div>
 
             <!-- menu profile quick info -->
-			<?php require 'templates/menu_profile_quick_info.php'?>
+			<?php require 'templates/menu-profile-quick-info.php'?>
 			<!-- menu profile quick info -->
 
             <br />
 
             <!-- sidebar menu -->
-			<?php require './templates/sidebar_menu.php'?>
+			<?php require './templates/sidebar-menu.php'?>
 			<!-- sidebar menu -->
 			
 			
             <!-- /menu footer buttons -->
-			<?php require 'templates/menu_footer_buttons.php'?>
+			<?php require 'templates/menu-footer-buttons.php'?>
 			<!-- /menu footer buttons -->
           </div>
         </div>
 
         <!-- top navigation -->
-        <?php require 'templates/top_navigation.php'?>
+        <?php require 'templates/top-navigation.php'?>
 		<!-- /top navigation -->
 
         <!-- page content -->
         <div class="right_col" role="main">
           <div class="">
             <div class="page-title">
-			<h3>Listado de Clientes <small></small></h3>
-              <div class="title_left">
-                
-              </div>
-
-              <div class="title_right">
-                
+			  <h3>Información del Cliente <small></small></h3>
+			  <div class="title_right">
               </div>
             </div>
-
+			
             <div class="clearfix"></div>
 			
 			<ul class="breadcrumb" style="margin-bottom: 10px;">
+			  <li><a href="client-list.php" class="btn-primary btn-xs btn-default btn-back-nav"><i class="fa fa-arrow-left"></i></a></li>
 			  <li><a href="index.php">Inicio</a> </li>
-			  <li class="active">Lista de Clientes</li>
+			  <li><a href="client-list.php">Lista de Clientes</a></li>
+			  <li class="active">Editar cliente</li>
 			</ul>
 
+			<div class="clearfix"></div>
             <div class="row">
-              <div class="col-md-12 col-sm-12 col-xs-12">
-                <div class="x_panel">
-                  <div class="x_title">
-                    <h2>Lista de clientes activos en el sistema <small></small></h2> 
-                    <div class="clearfix"></div>
-                  </div>
+              <div class="col-md-8 col-sm-12 col-xs-12">
+              <div class="x_panel">
+				  <div class="x_title">
+					<h3>Editar Cliente <i class="fa fa-chevron-right" style="opacity: 0.4;"></i> <small>Formulario de edición</small></h3>
+					
+					<div class="clearfix"></div>
+				  </div>
 				  <div class="x_content">
-                    <table id="client-list" class="table table-striped table-bordered">
-                      <thead>
-                        <tr>
-                          <th>Nombre</th>
-                          <th>Apellido</th>
-                          <th>Edad</th>
-						  <th></th>
-                        </tr>
-                      </thead>
-					  <tfoot>
-                        <tr>
-                          <th>Nombre</th>
-                          <th>Apellido</th>
-                          <th>Edad</th>
-						  <th></th>
-                        </tr>
-                      </tfoot>
-                    </table>
-                  </div>
-                </div>
-              </div>
+					<br />
+					<form class="form-horizontal form-label-left input_mask" id="form-client-edit">
+
+					  <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+						<input type="text" class="form-control has-feedback-left" id="name" placeholder="Nombre" value="{{client.name}}">
+						<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
+					  </div>
+
+					  <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+						<input type="text" class="form-control" id="last_name" placeholder="Apellido"  value="{{client.last_name}}">
+						<span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
+					  </div>
+
+					  <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+						<input type="text" class="form-control has-feedback-left" id="email" placeholder="Email"  value="{{client.email}}">
+						<span class="fa fa-envelope form-control-feedback left" aria-hidden="true"></span>
+					  </div>
+
+					  <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+						<input type="text" class="form-control" id="inputSuccess5" id="phone" placeholder="Phone"  value="{{client.phone}}">
+						<span class="fa fa-phone form-control-feedback right" aria-hidden="true"></span>
+					  </div>
+
+					  <div class="form-group">
+						<label class="control-label col-md-3 col-sm-3 col-xs-12">Tipo de cliente</label> <span class="required">*</span>
+						<input type="checkbox" class="js-switch" disabled="disabled" checked="checked" /> Oficina
+						<div class="col-md-9 col-sm-9 col-xs-12">
+						  
+						</div>
+					  </div>
+					  <div class="form-group">
+						<label class="control-label col-md-3 col-sm-3 col-xs-12">Fecha de nacimiento
+						</label>
+						<div class="col-md-9 col-sm-9 col-xs-12">
+						  <input class="date-picker form-control col-md-7 col-xs-12" type="text">
+						</div>
+					  </div>
+					  <div class="ln_solid"></div>
+					  <div class="form-group">
+						<div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
+						  <button type="button" class="btn btn-primary">Cancelar</button>
+						   <button class="btn btn-primary" type="reset">Limpiar</button>
+						  <button type="submit" class="btn btn-success">Guardar</button>
+						</div>
+					  </div>
+
+					</form>
+				  </div>
+				</div>
+			  </div>
+            </div>
             
-			</div>
           </div>
         </div>
         <!-- /page content -->
 
         <!-- footer content -->
-		<?php require 'templates/footer_content.php'?>
+		<?php require 'templates/footer-content.php'?>
 		<!-- footer content -->
         
       </div>
     </div>
 	
-	<!-- compose -->
-    <div class="compose col-md-10 col-xs-12">
-	  <div class="compose-header">
-	    
-        <button type="button" class="close compose-close">
-          <span style="color:white">×</span>
-        </button>
-      </div>
-      <div class="compose-body">
-		<div id="client-panel-content">
-				<!-- Render template with jQuery -->
-		</div>
-	  </div>
-	  <div class="compose-footer">
-        <button id="send" class="btn btn-sm btn-success" type="button">Send</button>
-      </div>
-    </div>
-    <!-- /compose -->
-	
-
     <!-- jQuery -->
     <script src="./vendors/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap -->
@@ -175,11 +178,15 @@
 	<!-- Mustache librery -->
 	<script src="./vendors/mustache.js/mustache.min.js"></script>
 
-    <!-- Custom Theme Scripts -->
+	<!-- Switchery -->
+    <script src="./vendors/switchery/dist/switchery.min.js"></script>
+    
+	<!-- Custom Theme Scripts -->
     <script src="./js/custom.js"></script>
 	
+	
 	<!-- Client List Scripts -->
-    <script src="./js/client_list.js"></script>
+    <script src="./js/client-panel-edit.js"></script>
 	
   </body>
 </html>

@@ -36,31 +36,31 @@
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             
-			<!-- navbar nav_title -->
-			<?php require 'templates/navbar nav_title.php'?>
-			<!-- navbar nav_title -->
+			<!-- navbar-nav-title -->
+			<?php require 'templates/navbar-nav-title.php'?>
+			<!-- navbar-nav-title -->
 
             <div class="clearfix"></div>
 
             <!-- menu profile quick info -->
-			<?php require 'templates/menu_profile_quick_info.php'?>
+			<?php require 'templates/menu-profile-quick-info.php'?>
 			<!-- menu profile quick info -->
 
             <br />
 
             <!-- sidebar menu -->
-			<?php require './templates/sidebar_menu.php'?>
+			<?php require './templates/sidebar-menu.php'?>
 			<!-- sidebar menu -->
 			
 			
             <!-- /menu footer buttons -->
-			<?php require 'templates/menu_footer_buttons.php'?>
+			<?php require 'templates/menu-footer-buttons.php'?>
 			<!-- /menu footer buttons -->
           </div>
         </div>
 
         <!-- top navigation -->
-        <?php require 'templates/top_navigation.php'?>
+        <?php require 'templates/top-navigation.php'?>
 		<!-- /top navigation -->
 
         <!-- page content -->
@@ -76,7 +76,7 @@
         <!-- /page content -->
 
         <!-- footer content -->
-		<?php require 'templates/footer_content.php'?>
+		<?php require 'templates/footer-content.php'?>
 		<!-- footer content -->
         
       </div>

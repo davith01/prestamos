@@ -64,7 +64,8 @@
 	<!-- jQuery -->
     <script src="./vendors/jquery/dist/jquery.min.js"></script>
     
-    
+    <!-- Sha1 encrypt function -->
+    <script src="./js/sha-1.js"></script>
 	<!-- Login script -->
     <script src="./js/login.js"></script>
 	

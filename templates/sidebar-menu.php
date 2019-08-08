@@ -5,34 +5,34 @@
 	<ul class="nav side-menu">
 	  <li><a><i class="fa fa-home"></i> Administrador <span class="fa fa-chevron-down"></span></a>
 		<ul class="nav child_menu">
-		  <li><a href="page_no_found.php">Dashboard</a></li>
-		  <li><a href="page_no_found.php">Dashboard2</a></li>
-		  <li><a href="page_no_found.php">Dashboard3</a></li>
+		  <li><a href="page-no-found.php">Dashboard</a></li>
+		  <li><a href="page-no-found.php">Dashboard2</a></li>
+		  <li><a href="page-no-found.php">Dashboard3</a></li>
 		</ul>
 	  </li>
 	  <li><a><i class="fa fa-edit"></i> Digitador <span class="fa fa-chevron-down"></span></a>
 		<ul class="nav child_menu">
-		  <li><a href="page_no_found.php">Pagos y prestamos</a></li>
-		  <li><a href="page_no_found.php">Balance</a></li>
+		  <li><a href="page-no-found.php">Pagos y prestamos</a></li>
+		  <li><a href="page-no-found.php">Balance</a></li>
 		</ul>
 	  </li>
 	  <li><a><i class="fa fa-desktop"></i> Caja <span class="fa fa-chevron-down"></span></a>
 		<ul class="nav child_menu">
-		  <li><a href="page_no_found.php">Entrada</a></li>
-		  <li><a href="page_no_found.php">Salida</a></li>
-		  <li><a href="page_no_found.php">Balance</a></li>
+		  <li><a href="page-no-found.php">Entrada</a></li>
+		  <li><a href="page-no-found.php">Salida</a></li>
+		  <li><a href="page-no-found.php">Balance</a></li>
 		</ul>
 	  </li>
 	  <li><a><i class="fa fa-user"></i> Administrar Clientes <span class="fa fa-chevron-down"></span></a>
 		<ul class="nav child_menu">
-		  <li><a href="page_no_found.php">Crear cliente</a></li>
+		  <li><a href="page-no-found.php">Crear cliente</a></li>
 		</ul>
 	  </li>
 	  <li><a><i class="fa fa-clone"></i>Informes y reportes <span class="fa fa-chevron-down"></span></a>
 		<ul class="nav child_menu">
-		  <li><a href="client_list.php">Listado de clientes</a></li>
-		  <li><a href="interest_list.php">Listado de Intereses</a></li>
-		  <li><a href="day_sheet.php">Hoja del día</a></li>
+		  <li><a href="client-list.php">Listado de clientes</a></li>
+		  <li><a href="interest-list.php">Listado de Intereses</a></li>
+		  <li><a href="day-sheet.php">Hoja del día</a></li>
 		  
 		</ul>
 	  </li>

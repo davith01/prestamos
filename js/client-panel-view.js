@@ -1,22 +1,17 @@
-var getUrlParameter = function getUrlParameter(sParam) {
-    var sPageURL = window.location.search.substring(1),
-        sURLVariables = sPageURL.split('&'),
-        sParameterName,
-        i;
 
-    for (i = 0; i < sURLVariables.length; i++) {
-        sParameterName = sURLVariables[i].split('=');
-
-        if (sParameterName[0] === sParam) {
-            return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
-        }
-    }
-};
-
+// click on row button
+function getEditClient(id){
+	window.location.href = './client-panel-edit.php?id='+id;	
+}
 
 // Retrive the client list and load datatable
 $(document).ready(function(){
 
+  function MoneyCurrencyFormat(strNumber){
+	  if(strNumber.length===0) return '$0';
+	  return '$'+strNumber.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.");
+  }
+  
   // Retrive the client panel template
   var template_html = $('#client-panel-content').html();
  
@@ -28,8 +23,16 @@ $(document).ready(function(){
  
   // render the template
   posting.done(function( response ) {
-	var rendered = Mustache.render(template_html, { 'client' : response.data } );
-	$('#client-panel-content').html(rendered);
+	if(response.data) {
+		
+		response.data.capital_format = MoneyCurrencyFormat(response.data.capital);
+		response.data.interest_format = MoneyCurrencyFormat(response.data.interest);
+		response.data.overdue_months_format = MoneyCurrencyFormat(response.data.overdue_months);
+		
+		var rendered = Mustache.render(template_html, { 'client' : response.data } );
+		
+		$('#client-panel-content').html(rendered);
+	}
   });
   
   // show message error
